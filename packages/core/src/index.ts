@@ -1,1 +1,3 @@
-console.log('core');
+export default function () {
+    console.log('***core***');
+}
