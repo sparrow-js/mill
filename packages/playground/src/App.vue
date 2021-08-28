@@ -4,7 +4,15 @@
   </div>
   <router-view />
 </template>
+<script lang="ts">
+import core from '@mill-too/core';
 
+export default {
+   setup(props, ctx) {
+     
+   }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

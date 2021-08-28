@@ -2,10 +2,31 @@
   "name": "mill",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "build": "rimraf -rf packages/*/{lib,esm} && lerna run build",
+    "start:playground": "cd packages/playground && npm run start",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:prod": "jest --coverage --silent",
+    "preversion": "npm run build && npm run lint",
+    "version": "ts-node scripts/release changelog && git add -A",
+    "version:alpha": "lerna version prerelease --preid alpha",
+    "version:beta": "lerna version prerelease --preid beta",
+    "version:rc": "lerna version prerelease --preid rc",
+    "version:patch": "lerna version patch",
+    "version:minor": "lerna version minor",
+    "version:preminor": "lerna version preminor --preid beta",
+    "version:major": "lerna version major",
+    "release:force": "lerna publish from-package --yes && ts-node scripts/release release",
+    "prelease:force": "lerna publish from-package --yes --dist-tag next && ts-node scripts/release release",
+    "release": "lerna publish",
+    "prelease": "lerna publish --dist-tag next",
+    "lint": "eslint --ext .ts,.tsx,.js  --fix"
   },
   "dependencies": {
     "ant-design-vue": "^2.2.6",
@@ -15,6 +36,7 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -29,8 +51,21 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
+    "lerna": "^4.0.0",
+    "less-plugin-npm-import": "^2.1.0",
     "prettier": "^2.2.1",
-    "typescript": "~4.1.5"
+    "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-external-globals": "^0.6.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-import-plugin": "1.6.1",
+    "ts-jest": "^26.0.0",
+    "ts-loader": "^7.0.4",
+    "ts-node": "^9.1.1",
+    "typescript": "4.1.5"
   },
   "eslintConfig": {
     "root": true,
