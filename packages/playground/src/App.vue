@@ -8,8 +8,8 @@
 import core from '@mill-too/core';
 
 export default {
-   setup(props, ctx) {
-     
+   setup() {
+     core();
    }
 }
 </script>

@@ -15,9 +15,7 @@
       "webpack-env"
     ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@mill-too/*": ["./packages/*/src"]
     },
     "lib": [
       "esnext",

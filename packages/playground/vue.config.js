@@ -1,5 +1,5 @@
-import path from 'path'
-import fs from 'fs-extra'
+const path = require('path');
+const fs = require('fs-extra');
 
 const getAlias = () => {
   const packagesDir = path.resolve(__dirname, '../../packages')
@@ -8,10 +8,11 @@ const getAlias = () => {
   const deps = Object.entries(pkg.dependencies).reduce((deps, [key]) => {
     if (key.includes('@mill-too/')) {
       return deps
-    } else if (key.includes('vue')) {
-      deps[key] = require.resolve(key)
-      return deps
-    }
+    } 
+    // else if (key.includes('vue')) {
+    //   deps[key] = require.resolve(key)
+    //   return deps
+    // }
     deps[key] = key
     return deps
   }, {})
@@ -30,8 +31,14 @@ const getAlias = () => {
   return alias
 }
 
+console.log('*******', getAlias())
+
 module.exports = {
     configureWebpack: {
-        resolve: getAlias()
+      resolve: {
+        modules: ['node_modules'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css'],
+        alias: getAlias(),
+      }
     }
 }
