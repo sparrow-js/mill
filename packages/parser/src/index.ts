@@ -1,16 +1,21 @@
 import {Parser} from 'htmlparser2';
 import Hash from 'object-hash';
 
-export default function (context: string) {
+export default function (context: string, fileName: string) {
   let result = '';
   const parser = new Parser({
     onopentag(name, attributes) {
-      result += `<${name}>`
       const uid = Hash({
         fileName: '/driver/index.html',
         name,
         props: attributes,
       })
+      attributes['data-uid'] = uid;
+      let attributesStr = '';
+      for (let key in attributes) {
+        attributesStr = `${key}="${attributes[key]}"`
+      }
+      result += `<${name} ${attributesStr}>`;
     },
     ontext(text) {
       result += text;
