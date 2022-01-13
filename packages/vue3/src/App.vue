@@ -11,7 +11,7 @@ import parser from '@mill-too/parser';
 export default {
    setup() {
      core();
-     parser('hello');
+     parser('hello', '/src/app.vue');
    }
 }
 </script>
