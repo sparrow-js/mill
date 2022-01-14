@@ -31,14 +31,23 @@ const getAlias = () => {
   return alias
 }
 
-console.log('*******', getAlias())
-
 module.exports = {
     configureWebpack: {
       resolve: {
-        modules: ['node_modules'],
+        modules: ['node_modules', 'loaders'],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css'],
         alias: getAlias(),
+      },
+      resolveLoader: {
+        modules: ['node_modules', 'loaders'] // 配置加载本地loader
       }
+    },
+    chainWebpack: config => {
+      config.module
+      .rule('vue')
+      .test(/\.vue$/)
+      .use('vue-mark-loader')
+        .loader('vue-mark-loader')
+        .end()
     }
 }

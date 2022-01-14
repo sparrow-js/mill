@@ -40,9 +40,9 @@ export function generateConsistentUID (
             }
         }
 
-        for (let firstChar of atoz) {
-            for (let secondChar of atoz) {
-                for (let thirdChar of atoz) {
+        for (const firstChar of atoz) {
+            for (const secondChar of atoz) {
+                for (const thirdChar of atoz) {
                     const possibleUID = `${firstChar}${secondChar}${thirdChar}`;
                     if (!existingIDs.has(possibleUID)) {
                         return possibleUID;

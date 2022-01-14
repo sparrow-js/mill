@@ -7,7 +7,7 @@ const existingIDs: Set<string> = new Set();
 
 export default function (context: string, fileName: string) {
   let result = '';
-  let stack: string[] = [];
+  const stack: string[] = [];
   const parser = new Parser({
     onopentag(name, attributes, isImplied) {
       const hash = Hash({
@@ -26,6 +26,7 @@ export default function (context: string, fileName: string) {
       for (let key in attributes) {
         attributesStr += `${key}="${attributes[key]}" `
       }
+
       result += `<${name} ${attributesStr}>`;
     },
     ontext(text) {
