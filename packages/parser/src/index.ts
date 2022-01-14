@@ -23,7 +23,7 @@ export default function (context: string, fileName: string) {
       existingIDs.add(uid);
       attributes['data-uid'] = uid;
       let attributesStr = '';
-      for (let key in attributes) {
+      for (const key in attributes) {
         attributesStr += `${key}="${attributes[key]}" `
       }
 
