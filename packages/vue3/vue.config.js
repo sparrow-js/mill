@@ -39,7 +39,7 @@ module.exports = {
         alias: getAlias(),
       },
       resolveLoader: {
-        modules: ['node_modules', '../loaders'] // 配置加载本地loader
+        modules: ['node_modules', '../packages'] // 配置加载本地loader
       }
     },
     chainWebpack: config => {
