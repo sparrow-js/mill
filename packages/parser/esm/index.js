@@ -56,4 +56,3 @@ export default function (context, fileName) {
     parser.end();
     console.log('***parser***', result);
 }
-//# sourceMappingURL=index.js.map

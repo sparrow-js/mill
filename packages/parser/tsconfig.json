@@ -1,5 +1,25 @@
 {
-  "extends": "../../tsconfig.json",
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "exclude": ["./src/__tests__/*", "./esm/*", "./lib/*"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "sourceMap": false,
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "allowJs": false,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "es6",
+      "es7",
+      "DOM"
+    ]
+  },
+  "include": [
+    "src"
+  ]
 }

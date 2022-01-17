@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateConsistentUID = void 0;
 const atoz = [
     'a',
     'b',
@@ -26,7 +29,7 @@ const atoz = [
     'y',
     'z',
 ];
-export function generateConsistentUID(existingIDs, possibleStartingValue) {
+function generateConsistentUID(existingIDs, possibleStartingValue) {
     if (possibleStartingValue.length >= 3) {
         const maxSteps = Math.floor(possibleStartingValue.length / 3);
         for (let step = 0; step < maxSteps; step++) {
@@ -48,4 +51,4 @@ export function generateConsistentUID(existingIDs, possibleStartingValue) {
     }
     return '';
 }
-//# sourceMappingURL=uid-utils.js.map
+exports.generateConsistentUID = generateConsistentUID;
