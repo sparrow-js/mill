@@ -2,7 +2,7 @@
   "name": "@mill-too/parser",
   "version": "0.4.34",
   "license": "MIT",
-  "main": "lib",
+  "main": "dist/mill.Parser.umd.development.js",
   "types": "lib/index.d.ts",
   "engines": {
     "npm": ">=3.0.0"
@@ -22,6 +22,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
     "@types/object-hash": "^2.2.1"
   }
 }

@@ -2,7 +2,7 @@
   "name": "vue-mark-loader",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "engines": {
     "npm": ">=3.0.0"
   },
@@ -14,7 +14,8 @@
     "build:umd": "rollup --config"
   },
   "dependencies": {
-    "webpack": "^4.41.2"
+    "webpack": "^4.41.2",
+    "@mill-too/core": "0.4.34"
   },
   "publishConfig": {
     "access": "public"

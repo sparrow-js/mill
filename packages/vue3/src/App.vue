@@ -6,12 +6,10 @@
 </template>
 <script lang="ts">
 import core from '@mill-too/core';
-import parser from '@mill-too/parser';
 
 export default {
    setup() {
      core();
-     parser('hello', '/src/app.vue');
    }
 }
 </script>

@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import NpmImport from 'less-plugin-npm-import'
 import externalGlobals from 'rollup-plugin-external-globals'
 import { terser } from 'rollup-plugin-terser'
+import json from '@rollup/plugin-json'
 
 const presets = () => {
   const externals = {
@@ -13,6 +14,7 @@ const presets = () => {
     react: 'React',
     moment: 'moment',
     '@mill-too/core': 'Mill.Core',
+    '@mill-too/parser': 'Mill.Parser'
   }
   return [
     typescript({
@@ -39,6 +41,7 @@ const presets = () => {
       },
     }),
     commonjs(),
+    json(),
     externalGlobals(externals),
   ]
 }

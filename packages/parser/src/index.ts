@@ -1,6 +1,5 @@
 import {Parser} from 'htmlparser2';
 import Hash from 'object-hash';
-import { stringifyQuery } from 'vue-router';
 import {generateConsistentUID} from './uid-utils';
 
 const existingIDs: Set<string> = new Set();

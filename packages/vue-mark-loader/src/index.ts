@@ -8,5 +8,5 @@ export default function (
 
     console.log('*******', source, parser);
     console.log(this);
-    // return source;
+    return source;
 }
