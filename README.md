@@ -4,5 +4,5 @@
 
 持续开发中
 
-consult designable
+拖拽代码使用 designable
 

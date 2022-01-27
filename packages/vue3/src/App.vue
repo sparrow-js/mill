@@ -6,7 +6,6 @@
 </template>
 <script lang="ts">
 import core from '@mill-too/core';
-
 export default {
    setup() {
      core();

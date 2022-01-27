@@ -1,6 +1,8 @@
+import { IEngineProps } from "../types";
+
 export class Engine{
-    constructor () {
-        
+    constructor (props: IEngineProps<Engine>) {
+
     }
     
 }
