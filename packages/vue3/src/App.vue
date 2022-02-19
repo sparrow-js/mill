@@ -1,14 +1,31 @@
 <template>
   <div id="nav">
+    <div :data-mill="test" @click="testclick">
+      {{cursor.type}}
+    </div>
     <router-link to="/">Home</router-link>
   </div>
   <router-view />
 </template>
 <script lang="ts">
-import core from '@mill-too/core';
+import {useCursor} from './hooks/useCursor';
+import { 
+    ref
+} from 'vue';
 export default {
    setup() {
-     core();
+     const cursor = useCursor();
+      const test = ref({
+        id: 'test'
+      })
+      const testclick = () => {
+        console.log('******8')
+      }
+     return {
+       cursor,
+       testclick,
+       test
+     }
    }
 }
 </script>

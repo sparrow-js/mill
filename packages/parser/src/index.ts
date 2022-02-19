@@ -19,7 +19,7 @@ export default function (source: string, fileName: string):string {
       }
       const uid = generateConsistentUID(existingIDs, hash);
       existingIDs.add(uid);
-      attributes['data-uid'] = uid;
+      attributes['data-mill-node-id'] = uid;
       let attributesStr = '';
       for (const key in attributes) {
         attributesStr += `${key}="${attributes[key]}" `

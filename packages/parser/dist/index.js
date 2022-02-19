@@ -4,6 +4,7 @@ const htmlparser2_1 = require("htmlparser2");
 const Hash = require('object-hash');
 const uid_utils_1 = require("./uid-utils");
 const existingIDs = new Set();
+console.log('**************11');
 function default_1(source, fileName) {
     let result = '';
     const stack = [];
@@ -20,7 +21,7 @@ function default_1(source, fileName) {
             }
             const uid = uid_utils_1.generateConsistentUID(existingIDs, hash);
             existingIDs.add(uid);
-            attributes['data-uid'] = uid;
+            attributes['data-mill-node-id'] = uid;
             let attributesStr = '';
             for (const key in attributes) {
                 attributesStr += `${key}="${attributes[key]}" `;

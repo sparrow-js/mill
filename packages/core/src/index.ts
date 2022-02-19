@@ -1,3 +1,1 @@
-export default function () {
-  console.log('***core***');
-}
+export * from './exports';

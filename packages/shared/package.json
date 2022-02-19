@@ -9,6 +9,9 @@
   "keywords": [
     "shared"
   ],
+  "dependencies": {
+    "requestidlecallback": "^0.3.0"
+  },
   "author": "",
   "license": "ISC"
 }

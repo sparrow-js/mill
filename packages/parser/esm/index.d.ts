@@ -1,1 +1,1 @@
-export default function (context: string, fileName: string): void;
+export default function (source: string, fileName: string): string;
