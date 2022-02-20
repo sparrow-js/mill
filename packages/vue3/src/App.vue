@@ -1,5 +1,10 @@
 <template>
   <div id="nav">
+    <designer>
+      <workbench>
+        <workspace></workspace>
+      </workbench>
+    </designer>
     <div :data-mill="test" @click="testclick">
       {{cursor.type}}
     </div>
@@ -12,8 +17,15 @@ import {useCursor} from './hooks/useCursor';
 import { 
     ref
 } from 'vue';
+import {Designer, Workbench, Workspace} from './containers'
+
 export default {
-   setup() {
+  components:{
+    Designer,
+    Workbench,
+    Workspace
+  },
+  setup() {
      const cursor = useCursor();
       const test = ref({
         id: 'test'

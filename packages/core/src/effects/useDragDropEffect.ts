@@ -68,7 +68,6 @@ export const useDragDropEffect = (engine: Engine) => {
     `)
     const nodeId = el?.getAttribute(engine.props.nodeIdAttrName)
     const outlineId = el?.getAttribute(engine.props.outlineNodeIdAttrName)
-    debugger
     engine.workbench.eachWorkspace((currentWorkspace) => {
       console.log('*********yest')
 

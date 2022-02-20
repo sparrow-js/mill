@@ -80,7 +80,6 @@ export class Workbench {
   }
 
   ensureWorkspace(props: IWorkspaceProps = {}) {
-    debugger;
     const workspace = this.findWorkspaceById(props.id)
     if (workspace) return workspace
     this.addWorkspace(props)

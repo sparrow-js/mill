@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@mill-too/core": "^1.0.0",
+    "@mill-too/shared": "^1.0.0",
+    "@vue/babel-plugin-jsx": "^1.1.1",
     "ant-design-vue": "^2.2.7",
     "core-js": "^3.6.5",
     "pinia": "^2.0.9",
